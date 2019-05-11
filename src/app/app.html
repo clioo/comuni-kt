@@ -1,15 +1,18 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu</ion-title>
+      <ion-title>Inicial sesión</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <!-- <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
-      </button>
+      </button> -->
+      <ion-input type="password" [(ngModel)]="pass" placeholder="Contraseña"></ion-input>
+      <button color="dark" (click)="iniciarSesion()" ion-button block outline small>Entrar</button>
+
     </ion-list>
   </ion-content>
 

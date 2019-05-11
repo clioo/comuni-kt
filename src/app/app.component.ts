@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { Storage } from '@ionic/storage';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
@@ -11,19 +11,22 @@ import { ListPage } from '../pages/list/list';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-
+  pass:any;
   rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
+    storage:Storage) {
     this.initializeApp();
-
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage }
     ];
+
+
+    
 
   }
 
@@ -35,6 +38,11 @@ export class MyApp {
       this.splashScreen.hide();
     });
   }
+
+  public iniciarSesion(){
+    alert(this.pass);
+  }
+
 
   openPage(page) {
     // Reset the content nav to have just this page
