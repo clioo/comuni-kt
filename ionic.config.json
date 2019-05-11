@@ -1,0 +1,7 @@
+{
+  "name": "comuni-kt",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
