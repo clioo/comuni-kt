@@ -5,6 +5,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { ControlParentalPage } from '../pages/control-parental/control-parental';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,7 +19,8 @@ import { IonicStorageModule } from '@ionic/storage';
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    ControlParentalPage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { IonicStorageModule } from '@ionic/storage';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    ControlParentalPage
   ],
   providers: [
     StatusBar,

@@ -14,7 +14,12 @@ export class HomePage {
   phoneNumber = '668832738'
   objeto:Object;
   constructor(public navCtrl: NavController,public call:CallNumber, private storage:Storage) {
-
+    storage.get('sdfsdfdsf').then((val:any)=>{
+      if (val == null) {
+        storage.set('pass','123')
+      }
+    })
+    
     // for (let i = 0; i < 3; i++) {
     //   let user = {
     //     nombre:'chicho',

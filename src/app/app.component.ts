@@ -5,6 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Storage } from '@ionic/storage';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { ControlParentalPage } from '../pages/control-parental/control-parental';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -17,7 +19,7 @@ export class MyApp {
   pages: Array<{title: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
-    storage:Storage) {
+    private storage:Storage) {
     this.initializeApp();
     // used for an example of ngFor and navigation
     this.pages = [
@@ -40,7 +42,13 @@ export class MyApp {
   }
 
   public iniciarSesion(){
-    alert(this.pass);
+    this.storage.get('pass').then((val:any)=>{
+      if (val == this.pass) {
+        this.nav.setRoot(ControlParentalPage);
+      }
+    })
+    
+    
   }
 
 
