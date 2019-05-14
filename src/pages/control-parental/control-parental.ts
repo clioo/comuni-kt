@@ -1,6 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
 import { AgregarTutorPage } from '../agregar-tutor/agregar-tutor';
+import { CambiarContrasenaPage } from '../cambiar-contrasena/cambiar-contrasena';
+import { CambiarTutorPage } from '../cambiar-tutor/cambiar-tutor';
+import { Interface } from 'readline';
+
+
 /**
  * Generated class for the ControlParentalPage page.
  *
@@ -17,14 +22,16 @@ export class ControlParentalPage {
   @ViewChild(Nav) nav: Nav;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  pages = {
-    
-  }
+  public pages = [
+    {title: 'Agregar tutor', page:AgregarTutorPage},
+    {title: 'Cambiar contraseña', page:CambiarContrasenaPage},
+    {title: 'Modificar tutor', page:CambiarTutorPage}
+  ]
   ionViewDidLoad() {
     console.log('ionViewDidLoad ControlParentalPage');
   }
-  agregarTutor(){
-    this.navCtrl.push(AgregarTutorPage);
+  pushPage(pageObject:any){
+    this.navCtrl.push(pageObject.page);
   }
   
 }

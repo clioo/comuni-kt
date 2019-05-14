@@ -3,10 +3,14 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
+
+//pages
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ControlParentalPage } from '../pages/control-parental/control-parental';
 import { AgregarTutorPage } from '../pages/agregar-tutor/agregar-tutor';
+import { CambiarContrasenaPage } from '../pages/cambiar-contrasena/cambiar-contrasena';
+import { CambiarTutorPage } from '../pages/cambiar-tutor/cambiar-tutor';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -26,7 +30,9 @@ import { Camera } from '@ionic-native/camera';
     HomePage,
     ListPage,
     ControlParentalPage,
-    AgregarTutorPage
+    AgregarTutorPage,
+    CambiarContrasenaPage,
+    CambiarTutorPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,9 @@ import { Camera } from '@ionic-native/camera';
     HomePage,
     ListPage,
     ControlParentalPage,
-    AgregarTutorPage
+    AgregarTutorPage,
+    CambiarContrasenaPage,
+    CambiarTutorPage
   ],
   providers: [
     StatusBar,
