@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { CallNumber } from '@ionic-native/call-number';
 import { Storage } from '@ionic/storage';
-import { JsonPipe } from '@angular/common';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -13,7 +13,7 @@ export class HomePage {
 
   phoneNumber = '668832738'
   objeto:Object;
-  constructor(public navCtrl: NavController,public call:CallNumber, private storage:Storage) {
+  constructor(public navCtrl: NavController,public call:CallNumber, private storage:Storage, private camera:Camera) {
     storage.get('sdfsdfdsf').then((val:any)=>{
       if (val == null) {
         storage.set('pass','123')
@@ -32,7 +32,24 @@ export class HomePage {
     //Guardamos en local storage la cadena de JSON
     // storage.set('usuarios', JSON.stringify(this.list));
   }
-
+  public getPicture(){
+    let options: CameraOptions = {
+      destinationType: this.camera.DestinationType.DATA_URL,
+      targetWidth: 100,
+      targetHeight: 100,
+      quality: 100,
+      sourceType:2
+    }
+    this.camera.getPicture( options )
+    .then(imageData => {
+      alert(`data:image/jpeg;base64,${imageData}`);
+      console.log('hola chicho puto');
+    })
+    .catch(error =>{
+      console.error( error );
+    });
+    
+}
 
   public consultar(){
     this.storage.get('usuarios').then((val:any)=>{

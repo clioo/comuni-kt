@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ControlParentalPage } from '../pages/control-parental/control-parental';
+import { AgregarTutorPage } from '../pages/agregar-tutor/agregar-tutor';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -14,13 +15,18 @@ import { CallNumber } from '@ionic-native/call-number';
 
 import { IonicStorageModule } from '@ionic/storage';
 
+//importamos camara
+import { Camera } from '@ionic-native/camera';
+
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    ControlParentalPage
+    ControlParentalPage,
+    AgregarTutorPage
   ],
   imports: [
     BrowserModule,
@@ -32,14 +38,15 @@ import { IonicStorageModule } from '@ionic/storage';
     MyApp,
     HomePage,
     ListPage,
-    ControlParentalPage
+    ControlParentalPage,
+    AgregarTutorPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     CallNumber,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-    
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Camera,
   ]
 })
 export class AppModule {}

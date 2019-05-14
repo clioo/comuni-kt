@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Nav } from 'ionic-angular';
+import { AgregarTutorPage } from '../agregar-tutor/agregar-tutor';
 /**
  * Generated class for the ControlParentalPage page.
  *
@@ -14,12 +14,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'control-parental.html',
 })
 export class ControlParentalPage {
-
+  @ViewChild(Nav) nav: Nav;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
+  pages = {
+    
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ControlParentalPage');
   }
-
+  agregarTutor(){
+    this.navCtrl.push(AgregarTutorPage);
+  }
+  
 }
