@@ -1,3 +1,12 @@
 page-agregar-tutor {
-
+    .ng-invalid.ng-touched:not(form){
+        border:1px solid red !important;
+    }
+    .ng-valid.ng-touched:not(form){
+        border:1px solid green !important;
+    }
+    .ng-invalid:not(form){
+        border:1px solid red !important;        
+    }
+    
 }

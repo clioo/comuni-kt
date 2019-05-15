@@ -11,6 +11,22 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button (click)="takePhoto()"></button>
-  <img [src]="foto" alt="">
+    <form (ngSubmit)="createUser(forma)" #forma="ngForm">
+            <ion-label>Nombre</ion-label>
+            <input ion-input ngModel required placeholder="Nombre" type="text" #nombre id="nombre" name="nombre">
+            <ion-label>Teléfono</ion-label>
+            <input ion-input ngModel pattern="[1-9]{1}[0-9]{9}" required placeholder="Teléfono" type="tel" #telefono id="telefno"
+             name="telefono" id="">
+             <ion-label>Color</ion-label>
+             <select ion-select ngModel required name="color" #color id="color">
+               <option *ngFor="let color of colores; let i=index" ion-select-option [value]="color.value">{{color.nombre}}</option>
+             </select>
+               
+
+             <br>
+             <button ion-button block (click)="takePhoto()" type="button" class="btn btn-primary">Imagen</button>
+             <br>
+            <button ion-button block type="submit"  class="btn btn-primary">Agregar</button>
+    
+        </form>
 </ion-content>

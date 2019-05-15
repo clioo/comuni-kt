@@ -8,25 +8,19 @@
 
 <ion-content padding>
   
-<div class="row">
-    <ion-card class="col-5 relative borde-rojo" (click)="llamar()">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi saepe veritatis iusto ducimus minima ex quia eius consequuntur, vel assumenda. Molestiae officia modi praesentium, dolore perferendis quis nam sapiente ut.
+<div *ngIf="this.users" class="row">
+    <ion-card *ngFor="let user of users" [id]="user.id" class=" relative" 
+    [ngClass]="{'col-5': true,
+                'relative': true,
+                'borde-azul': user.color === 'borde-azul',
+                'borde-rojo': user.color === 'borde-rojo',
+                'borde-amarillo': user.color === 'borde-amarillo',
+                'borde-negro': user.color === 'borde-negro',
+                'borde-verde': user.color === 'borde-verde'}" 
+                (click)="llamar(user.celular)">
+        <img [src]="user.foto" alt="">
       </ion-card>
-      <ion-card class="col-5 relative borde-verde" (click)="llamar()">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi saepe veritatis iusto ducimus minima ex quia eius consequuntur, vel assumenda. Molestiae officia modi praesentium, dolore perferendis quis nam sapiente ut.
-        </ion-card>
-        <ion-card class="col-5 relative borde-negro" (click)="llamar()">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi saepe veritatis iusto ducimus minima ex quia eius consequuntur, vel assumenda. Molestiae officia modi praesentium, dolore perferendis quis nam sapiente ut.
-          </ion-card>
 
 
 </div>
-  
-    
-      
-
-  
- 
-  <button ion-button (click)="getPicture()" >Tomar foto</button>
-  <button ion-button (click)="consultar()" >Consultar</button>
 </ion-content>

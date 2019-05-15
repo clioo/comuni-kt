@@ -22,6 +22,10 @@ import { IonicStorageModule } from '@ionic/storage';
 //importamos camara
 import { Camera } from '@ionic-native/camera';
 
+//custom providers
+import { LocalStorageProvider } from '../providers/local-storage/local-storage';
+
+
 
 
 @NgModule({
@@ -55,6 +59,7 @@ import { Camera } from '@ionic-native/camera';
     CallNumber,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Camera,
+    LocalStorageProvider,
   ]
 })
 export class AppModule {}
