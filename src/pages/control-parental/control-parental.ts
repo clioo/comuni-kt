@@ -23,9 +23,9 @@ export class ControlParentalPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
   public pages = [
-    {title: 'Agregar tutor', page:AgregarTutorPage},
-    {title: 'Cambiar contraseña', page:CambiarContrasenaPage},
-    {title: 'Modificar tutor', page:CambiarTutorPage}
+    {title: 'Agregar tutor', page:AgregarTutorPage, icon:'person-add'},
+    {title: 'Cambiar contraseña', page:CambiarContrasenaPage, icon:'settings'},
+    {title: 'Modificar tutor', page:CambiarTutorPage, icon:'create'}
   ]
   ionViewDidLoad() {
     console.log('ionViewDidLoad ControlParentalPage');

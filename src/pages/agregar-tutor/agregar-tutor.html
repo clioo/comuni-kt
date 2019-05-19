@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>agregarTutor</ion-title>
+    <ion-title>Agregar tutor <ion-icon name="person-add"></ion-icon></ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -21,12 +21,10 @@
              <select ion-select ngModel required name="color" #color id="color">
                <option *ngFor="let color of colores; let i=index" ion-select-option [value]="color.value">{{color.nombre}}</option>
              </select>
-               
-
              <br>
-             <button ion-button block (click)="takePhoto()" type="button" class="btn btn-primary">Imagen</button>
+             <button ion-button block (click)="takePhoto()" type="button" class="btn btn-primary">Imagen&nbsp;&nbsp;<ion-icon name="camera"></ion-icon></button>
              <br>
-            <button ion-button block type="submit"  class="btn btn-primary">Agregar</button>
+            <button ion-button block type="submit"  class="btn btn-primary">Agregar&nbsp;&nbsp;<ion-icon name="checkmark-circle"></ion-icon></button>
     
         </form>
 </ion-content>

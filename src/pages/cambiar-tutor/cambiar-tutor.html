@@ -6,10 +6,30 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>cambiarTutor</ion-title>
+    <ion-title>Cambiar Tutor</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <table class="table table-responsive">
+    <thead class="thead-default">
+      <tr>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Foto</th>
+        <th>Acción</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tutor of tutores; let i = index;">
+          <td scope="row">{{tutor.nombre}}{{i}}</td>
+          <td>{{tutor.celular}}</td>
+          <td><img class="img-thumbnail" [src]="tutor.foto" alt=""></td>
+          <td>
+            <button color="primary" ion-button block small (click)="modificarTutor(i)"><i class="fas fa-edit"></i></button>
+            <button color="danger" ion-button block small (click)="eliminarTutor(i)"><i class="fas fa-times"></i></button>            
+          </td>
+        </tr>
+      </tbody>
+  </table>
 </ion-content>

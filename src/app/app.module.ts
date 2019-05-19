@@ -11,6 +11,7 @@ import { ControlParentalPage } from '../pages/control-parental/control-parental'
 import { AgregarTutorPage } from '../pages/agregar-tutor/agregar-tutor';
 import { CambiarContrasenaPage } from '../pages/cambiar-contrasena/cambiar-contrasena';
 import { CambiarTutorPage } from '../pages/cambiar-tutor/cambiar-tutor';
+import { ModificarTutorPage } from '../pages/modificar-tutor/modificar-tutor';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -36,7 +37,9 @@ import { LocalStorageProvider } from '../providers/local-storage/local-storage';
     ControlParentalPage,
     AgregarTutorPage,
     CambiarContrasenaPage,
-    CambiarTutorPage
+    CambiarTutorPage,
+    ModificarTutorPage
+    
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { LocalStorageProvider } from '../providers/local-storage/local-storage';
     ControlParentalPage,
     AgregarTutorPage,
     CambiarContrasenaPage,
-    CambiarTutorPage
+    CambiarTutorPage,
+    ModificarTutorPage
   ],
   providers: [
     StatusBar,

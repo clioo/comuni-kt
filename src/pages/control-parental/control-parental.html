@@ -6,12 +6,16 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>controlParental</ion-title>
+    <ion-title>Control parental <ion-icon name="contact"></ion-icon></ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   
-  <button ion-button block dark (click)="pushPage(page)" *ngFor="let page of pages">{{page.title}}</button>
+  <button color="dark" ion-button block small (click)="pushPage(pages[0])">{{pages[0].title}}&nbsp;&nbsp;<ion-icon name="person-add"></ion-icon></button>
+  <button color="dark" ion-button block small (click)="pushPage(pages[1])">{{pages[1].title}}&nbsp;&nbsp;<ion-icon name="settings"></ion-icon></button>
+  <button color="dark" ion-button block small (click)="pushPage(pages[2])">{{pages[2].title}}&nbsp;&nbsp;<ion-icon name="create"></ion-icon></button>
+
+  
 
 </ion-content>

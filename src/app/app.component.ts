@@ -45,6 +45,8 @@ export class MyApp {
     this.storage.get('pass').then((val:any)=>{
       if (val == this.pass) {
         this.nav.push(ControlParentalPage);
+      }else{
+        alert('Error de credenciales')
       }
     })
     

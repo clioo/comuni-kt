@@ -1,13 +1,4 @@
-page-agregar-tutor {
-    .ng-invalid.ng-touched:not(form){
-        border:1px solid red !important;
-    }
-    .ng-valid.ng-touched:not(form){
-        border:1px solid green !important;
-    }
-    .ng-invalid:not(form){
-        border:1px solid red !important;        
-    }
+page-modificar-tutor {
     .relative{
         border: 20px solid;
     
@@ -28,5 +19,4 @@ page-agregar-tutor {
     .borde-verde{
         border-color: green;
     }
-    
 }

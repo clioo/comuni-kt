@@ -6,10 +6,14 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>cambiarContrasena</ion-title>
+    <ion-title>Cambiar contraseña <ion-icon name="settings"></ion-icon></ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+    <ion-input type="password" block [(ngModel)]="pass" placeholder="Contraseña"></ion-input>
+    <ion-input type="password" block [(ngModel)]="pass2" placeholder="Confirmar contraseña"></ion-input>
+    <ion-input type="password" block [(ngModel)]="newPass" placeholder="Nueva contraseña"></ion-input>
+    <button ion-button block (click)="changePassword()"  class="btn btn-primary">Agregar</button>
 
 </ion-content>

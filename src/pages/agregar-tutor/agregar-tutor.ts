@@ -53,7 +53,8 @@ export class AgregarTutorPage {
   }
   createUser(forma:any): void {
     if (forma.valid) {
-      if (this.foto) {
+      // if (this.foto) {
+      if (true) {
         let objeto:User = {
           id: this.storage.getId(),
           nombre:forma.controls.nombre.value,
@@ -62,6 +63,7 @@ export class AgregarTutorPage {
           color:forma.controls.color.value
         }
         this.storage.newUser(objeto);
+        this.navCtrl.pop();
       }else{
         alert('Se requiere seleccionar foto');
       }

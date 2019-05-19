@@ -14,15 +14,21 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class LocalStorageProvider {
   public users:User[] = [];
+  public usersExist = false;
+  public pass;
   constructor(private storage:Storage) {
     storage.get('users').then((data:any)=>{
      if (data !=  null) {
       this.users = JSON.parse(data);
+      this.usersExist = true;
      }
     
     })
     .catch(err=>{
       alert(err + ', mándenle al chicho captura de esto');
+    })
+    storage.get('pass').then(data=>{
+      this.pass = data;
     })
   }
   public iterar(){
@@ -38,11 +44,15 @@ export class LocalStorageProvider {
     this.users.push(user);
     this.save();
   }
+  public UpdateTutores(tutores:User[]){
+    this.users = tutores;
+    this.save()
+  }
   //guarda los cambios en el objeto JSON
   private save(){
     //hacemos el JSON una cadena para poder ser guardada en local storage
     this.storage.set('users',JSON.stringify(this.users)).then(data=>{
-      alert(data);
+      alert('Cambio registrado correctamente');
     }).catch(err=>{
       alert(err);
     })
@@ -77,6 +87,11 @@ export class LocalStorageProvider {
     })
     return pass;
   }
-
+  public getPassPromise(){
+    return this.storage.get('pass');
+  }
+  public changePassword(pass:any){
+    return this.storage.set('pass',pass);
+  }
 
 }
